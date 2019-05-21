@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19692488
+##  Job Name : FCC_Ir.75_Ru.25
+##  Nodelist : node940
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/FCC_A1/sqs_lev=2_a_Ir=0.75,a_Ru=0.25
+##   Started : Fri Jun 22 15:40:34 EDT 2018
+###############################################################################
+runstruct_vasp -w vasp.wrap mpirun -n 20

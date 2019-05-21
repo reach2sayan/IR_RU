@@ -1,0 +1,9 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19848836
+##  Job Name : p-16
+##  Nodelist : node851
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/FCC_A1/sqs_lev=1_a_Ir=0.5,a_Ru=0.5/vol_0/p-0.04_15.3525_16
+##   Started : Sat Jul  7 15:02:48 EDT 2018
+###############################################################################

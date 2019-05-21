@@ -1,0 +1,9 @@
+# hide WAVECAR files
+
+WAVECAR
+
+# hide image
+
+*.png
+*.jpg
+

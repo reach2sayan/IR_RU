@@ -1,0 +1,14 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19806198
+##  Job Name : FCC_lv1_.5,a_Ru=0.5/vol_0
+##  Nodelist : node928
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/FCC_A1/sqs_lev=1_a_Ir=0.5,a_Ru=0.5/vol_0/p+0.04_15.3525_52
+##   Started : Sun Jul  1 22:19:50 EDT 2018
+###############################################################################
+cp: cannot stat `OSZICAR': No such file or directory
+cp: cannot stat `OUTCAR': No such file or directory
+cp: cannot stat `CONTCAR': No such file or directory
+cp: cannot stat `DOSCAR': No such file or directory
+unable to open OSZICAR or OSZICAR.static

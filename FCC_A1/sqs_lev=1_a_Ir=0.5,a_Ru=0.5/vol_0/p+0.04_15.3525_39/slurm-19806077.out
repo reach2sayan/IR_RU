@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19806077
+##  Job Name : FCC_lv1_.5,a_Ru=0.5/vol_0
+##  Nodelist : node919
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/FCC_A1/sqs_lev=1_a_Ir=0.5,a_Ru=0.5/vol_0/p+0.04_15.3525_39
+##   Started : Sat Jun 30 19:25:35 EDT 2018
+###############################################################################
+slurmstepd: *** JOB 19806077 ON node919 CANCELLED AT 2018-07-01T07:25:50 DUE TO TIME LIMIT ***

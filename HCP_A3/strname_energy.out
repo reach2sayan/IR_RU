@@ -1,0 +1,5 @@
+sqs_lev=0_c_Ir=1
+sqs_lev=0_c_Ru=1
+sqs_lev=1_c_Ir=0.5,c_Ru=0.5
+sqs_lev=2_c_Ir=0.25,c_Ru=0.75
+sqs_lev=2_c_Ir=0.75,c_Ru=0.25

@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19694049
+##  Job Name : HCP_Ir.5_Ru.5
+##  Nodelist : node931
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/HCP_A3/sqs_lev=1_c_Ir=0.5,c_Ru=0.5
+##   Started : Fri Jun 22 15:57:26 EDT 2018
+###############################################################################
+runstruct_vasp -w vasp.wrap mpirun -n 20

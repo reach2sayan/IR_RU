@@ -1,0 +1,14 @@
+SYSTEM = Ir_Ru
+ISTART = 0
+ICHARG = 2
+PREC = Accurate
+ALGO = Very_Fast
+IBRION = 2
+ISMEAR = 1
+SIGMA = 0.1
+ISIF = 3
+NELMIN = 5
+EDIFFG = 1E-05
+NSW = 100
+#VOSKOWN = 1
+#ISPIN = 2

@@ -1,0 +1,9 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19697568
+##  Job Name : HCP_Ru_p-0
+##  Nodelist : node940
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/HCP_A3/sqs_lev=0_c_Ru=1/vol_0/p-0.04_10.875_0
+##   Started : Fri Jun 22 18:49:52 EDT 2018
+###############################################################################

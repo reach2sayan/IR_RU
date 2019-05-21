@@ -1,0 +1,67 @@
+ running on   20 total cores
+ distrk:  each k-point on   20 cores,    1 groups
+ distr:  one band on    1 cores,   20 groups
+ using from now: INCAR     
+ vasp.5.4.1 24Jun15 (build Feb 03 2017 16:24:58) complex                        
+  
+ POSCAR found :  2 types and     256 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default, NPAR=number of cores might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+RMM:   1     0.136791029504E+05    0.13679E+05   -0.47218E+05 25080   0.725E+02
+RMM:   2     0.131330993773E+04   -0.12366E+05   -0.13120E+05 25080   0.260E+02
+RMM:   3    -0.104566600740E+04   -0.23590E+04   -0.22856E+04 25080   0.111E+02
+RMM:   4    -0.184598903237E+04   -0.80032E+03   -0.57407E+03 25080   0.768E+01
+RMM:   5    -0.212910871137E+04   -0.28312E+03   -0.24896E+03 25080   0.451E+01
+RMM:   6    -0.227482743139E+04   -0.14572E+03   -0.12952E+03 25080   0.349E+01
+RMM:   7    -0.235269075659E+04   -0.77863E+02   -0.73854E+02 25080   0.235E+01
+RMM:   8    -0.240018822476E+04   -0.47497E+02   -0.44556E+02 25080   0.195E+01
+RMM:   9    -0.247908348699E+04   -0.78895E+02   -0.77975E+02 71883   0.137E+01
+RMM:  10    -0.248864065276E+04   -0.95572E+01   -0.11980E+02 79664   0.283E+00
+RMM:  11    -0.249087900829E+04   -0.22384E+01   -0.17830E+01 77260   0.686E-01
+RMM:  12    -0.249118624629E+04   -0.30724E+00   -0.19907E+00 79554   0.198E-01    0.782E+01
+RMM:  13    -0.241365034019E+04    0.77536E+02   -0.68485E+02 57185   0.246E+01    0.583E+01
+RMM:  14    -0.236778695334E+04    0.45863E+02   -0.34130E+02 51435   0.174E+01    0.416E+01
+RMM:  15    -0.233564440107E+04    0.32143E+02   -0.11854E+02 53338   0.101E+01    0.255E+01
+RMM:  16    -0.232133713292E+04    0.14307E+02   -0.25854E+01 56024   0.435E+00    0.446E+00
+RMM:  17    -0.232154875523E+04   -0.21162E+00   -0.64974E+00 73859   0.129E+00    0.447E+00
+RMM:  18    -0.232113969217E+04    0.40906E+00   -0.11789E+00 64563   0.689E-01    0.340E+00
+RMM:  19    -0.232074368592E+04    0.39601E+00   -0.68071E-01 59163   0.788E-01    0.160E+00
+RMM:  20    -0.232068331776E+04    0.60368E-01   -0.24109E-01 62074   0.374E-01    0.139E+00
+RMM:  21    -0.232066324084E+04    0.20077E-01   -0.10714E-01 64292   0.215E-01    0.132E+00
+RMM:  22    -0.232063325006E+04    0.29991E-01   -0.44062E-02 62195   0.147E-01    0.683E-01
+RMM:  23    -0.232062832854E+04    0.49215E-02   -0.13685E-02 65746   0.714E-02    0.456E-01
+RMM:  24    -0.232062549194E+04    0.28366E-02   -0.99587E-03 64139   0.710E-02    0.247E-01
+RMM:  25    -0.232062633691E+04   -0.84497E-03   -0.12379E-02 65700   0.776E-02    0.253E-01
+RMM:  26    -0.232062644259E+04   -0.10569E-03   -0.30125E-03 75043   0.275E-02    0.259E-01
+RMM:  27    -0.232062556522E+04    0.87737E-03   -0.68638E-04 60064   0.202E-02    0.170E-01
+RMM:  28    -0.232062501707E+04    0.54815E-03   -0.11715E-03 63216   0.252E-02    0.617E-02
+RMM:  29    -0.232062496340E+04    0.53675E-04   -0.46507E-04 72386   0.128E-02
+   1 F= -.23206250E+04 E0= -.23206249E+04  d E =-.257545E-03
+ writing wavefunctions

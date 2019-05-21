@@ -1,0 +1,9 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19857577
+##  Job Name : ${PWD:70:80}
+##  Nodelist : node923
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/HCP_A3/sqs_lev=1_c_Ir=0.5,c_Ru=0.5/vol_0/p-0.04_15.31_3
+##   Started : Fri Jul 13 03:55:22 EDT 2018
+###############################################################################

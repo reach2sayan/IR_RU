@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19852050
+##  Job Name : p-61
+##  Nodelist : node929
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/FCC_A1/sqs_lev=1_a_Ir=0.5,a_Ru=0.5/vol_0/p-0.04_15.3525_61
+##   Started : Mon Jul  9 13:35:24 EDT 2018
+###############################################################################
+slurmstepd: *** JOB 19852050 ON node929 CANCELLED AT 2018-07-10T13:35:48 DUE TO TIME LIMIT ***

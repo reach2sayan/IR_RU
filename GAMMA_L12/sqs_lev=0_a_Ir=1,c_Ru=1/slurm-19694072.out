@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19694072
+##  Job Name : L12_a,Ir1_c,Ru1
+##  Nodelist : node928
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/GAMMA_L12/sqs_lev=0_a_Ir=1,c_Ru=1
+##   Started : Fri Jun 22 16:09:03 EDT 2018
+###############################################################################
+runstruct_vasp -w vasp.wrap mpirun -n 20

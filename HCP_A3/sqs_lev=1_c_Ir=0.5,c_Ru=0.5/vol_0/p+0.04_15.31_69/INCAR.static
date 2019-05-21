@@ -1,0 +1,17 @@
+SYSTEM = Ir_Ru
+ICHARG = 2
+PREC = Accurate
+ALGO = Very_Fast
+ISMEAR = 1
+SIGMA = 0.1
+NELMIN = 5
+EDIFFG = 1E-05
+#VOSKOWN = 1
+#ISPIN = 2
+LREAL = AUTO
+IBRION = -1
+ISIF = 2
+ISTART=1
+NGX =    80
+NGY =   84
+NGZ =   84

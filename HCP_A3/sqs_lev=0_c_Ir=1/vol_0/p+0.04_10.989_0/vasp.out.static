@@ -1,0 +1,142 @@
+ running on   20 total cores
+ distrk:  each k-point on   20 cores,    1 groups
+ distr:  one band on    1 cores,   20 groups
+ using from now: INCAR     
+ vasp.5.4.1 24Jun15 (build Feb 03 2017 16:24:58) complex                        
+  
+ POSCAR found :  1 types and      96 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default, NPAR=number of cores might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+RMM:   1     0.576835226425E+04    0.57684E+04   -0.18848E+05 26520   0.713E+02
+RMM:   2     0.725109743214E+03   -0.50432E+04   -0.53581E+04 26520   0.263E+02
+RMM:   3    -0.301173054435E+03   -0.10263E+04   -0.99302E+03 26520   0.117E+02
+RMM:   4    -0.637092402697E+03   -0.33592E+03   -0.24846E+03 26520   0.792E+01
+RMM:   5    -0.751769650174E+03   -0.11468E+03   -0.10162E+03 26520   0.465E+01
+RMM:   6    -0.811391707885E+03   -0.59622E+02   -0.52278E+02 26520   0.342E+01
+RMM:   7    -0.842609073753E+03   -0.31217E+02   -0.28831E+02 26520   0.235E+01
+RMM:   8    -0.861144525724E+03   -0.18535E+02   -0.17033E+02 26520   0.183E+01
+RMM:   9    -0.889533861452E+03   -0.28389E+02   -0.27728E+02 72988   0.132E+01
+RMM:  10    -0.894010636246E+03   -0.44768E+01   -0.43565E+01 82399   0.265E+00
+RMM:  11    -0.895165248279E+03   -0.11546E+01   -0.90008E+00 81772   0.729E-01
+RMM:  12    -0.895388980525E+03   -0.22373E+00   -0.16231E+00 82567   0.233E-01    0.430E+01
+RMM:  13    -0.851377659402E+03    0.44011E+02   -0.82087E+01 54943   0.171E+01    0.176E+01
+RMM:  14    -0.843665502431E+03    0.77122E+01   -0.55569E+01 56788   0.116E+01    0.241E+00
+RMM:  15    -0.843677369774E+03   -0.11867E-01   -0.41884E+00 69040   0.190E+00    0.313E+00
+RMM:  16    -0.843396751486E+03    0.28062E+00   -0.69740E-01 62884   0.138E+00    0.109E+00
+RMM:  17    -0.843391812724E+03    0.49388E-02   -0.19092E-01 74070   0.271E-01    0.734E-01
+RMM:  18    -0.843381954853E+03    0.98579E-02   -0.38665E-02 69406   0.161E-01    0.498E-01
+RMM:  19    -0.843375218863E+03    0.67360E-02   -0.20845E-02 65974   0.159E-01    0.244E-01
+RMM:  20    -0.843375297415E+03   -0.78551E-04   -0.53527E-03 69657   0.650E-02    0.175E-01
+RMM:  21    -0.843375200423E+03    0.96992E-04   -0.15322E-03 65640   0.400E-02    0.152E-01
+RMM:  22    -0.843374876494E+03    0.32393E-03   -0.60246E-04 65451   0.286E-02    0.973E-02
+RMM:  23    -0.843374674626E+03    0.20187E-03   -0.27699E-04 63796   0.232E-02    0.421E-02
+RMM:  24    -0.843374614321E+03    0.60306E-04   -0.17652E-04 63753   0.199E-02
+   1 F= -.84337461E+03 E0= -.84339310E+03  d E =0.554501E-01
+ writing wavefunctions

@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19733474
+##  Job Name : batch_robustrelax_sqs.sh
+##  Nodelist : node906
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/HCP_A3/sqs_lev=2_c_Ir=0.75,c_Ru=0.25
+##   Started : Mon Jun 25 12:03:30 EDT 2018
+###############################################################################
+runstruct_vasp -w vasp.wrap mpirun -n 20

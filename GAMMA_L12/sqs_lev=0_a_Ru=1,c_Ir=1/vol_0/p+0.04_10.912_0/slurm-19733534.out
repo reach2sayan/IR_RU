@@ -1,0 +1,9 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 19733534
+##  Job Name : GAMMA_Ru,Ir_p+0
+##  Nodelist : node943
+##      CPUs : 20
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/GAMMA_L12/sqs_lev=0_a_Ru=1,c_Ir=1/vol_0/p+0.04_10.912_0
+##   Started : Mon Jun 25 12:30:12 EDT 2018
+###############################################################################
