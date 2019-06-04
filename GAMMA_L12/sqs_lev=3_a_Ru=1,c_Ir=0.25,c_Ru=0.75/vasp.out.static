@@ -1,0 +1,153 @@
+ running on   20 total cores
+ distrk:  each k-point on   20 cores,    1 groups
+ distr:  one band on   20 cores,    1 groups
+ using from now: INCAR     
+ vasp.5.4.4.18Apr17-6-g9f103f2a35 (build Sep 24 2018 12:56:49) complex          
+  
+ POSCAR found type information on POSCAR  Ir Ru
+ POSCAR found :  2 types and      64 ions
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default,   NCORE=1            might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|  ADVICE TO THIS USER RUNNING 'VASP/VAMP'   (HEAR YOUR MASTER'S VOICE ...):  |
+|                                                                             |
+|      You have a (more or less) 'large supercell' and for larger cells       |
+|      it might be more efficient to use real space projection operators      |
+|      So try LREAL= Auto  in the INCAR   file.                               |
+|      Mind: If you want to do a very accurate calculations keep the          |
+|      reciprocal projection scheme          (i.e. LREAL=.FALSE.)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR found type information on POSCAR  Ir Ru
+ POSCAR found :  2 types and      64 ions
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+
+
+ VERY BAD NEWS! internal error in subroutine IBZKPT:
+ Reciprocal lattice and k-lattice belong to different class of lattices. Often results are still useful...     168
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+DAV:   1     0.265117523615E+04    0.26512E+04   -0.13244E+05 48112   0.820E+02
+DAV:   2    -0.354680406050E+03   -0.30059E+04   -0.28765E+04 47754   0.333E+02
+DAV:   3    -0.603720298649E+03   -0.24904E+03   -0.23133E+03 71952   0.775E+01
+DAV:   4    -0.622879504122E+03   -0.19159E+02   -0.18329E+02 67064   0.216E+01
+DAV:   5    -0.623624187431E+03   -0.74468E+00   -0.72848E+00 68232   0.343E+00    0.392E+01
+DAV:   6    -0.621037408200E+03    0.25868E+01   -0.18781E+02 76752   0.451E+01    0.423E+01
+DAV:   7    -0.604228422871E+03    0.16809E+02   -0.20095E+02 86056   0.598E+01    0.342E+01
+DAV:   8    -0.598116510850E+03    0.61119E+01   -0.17622E+02 88120   0.408E+01    0.290E+01
+DAV:   9    -0.582802506936E+03    0.15314E+02   -0.74717E+01 88248   0.268E+01    0.911E+00
+DAV:  10    -0.581955971759E+03    0.84654E+00   -0.11787E+01 77808   0.950E+00    0.371E+00
+DAV:  11    -0.581843137877E+03    0.11283E+00   -0.14501E+00 74632   0.438E+00    0.263E+00
+DAV:  12    -0.581695306952E+03    0.14783E+00   -0.42475E-01 78960   0.231E+00    0.159E+00
+DAV:  13    -0.581636490812E+03    0.58816E-01   -0.15323E-01 78848   0.124E+00    0.111E+00
+DAV:  14    -0.581603488551E+03    0.33002E-01   -0.16591E-01 78512   0.123E+00    0.127E+00
+DAV:  15    -0.581571810659E+03    0.31678E-01   -0.13217E-01 77096   0.112E+00    0.544E-01
+DAV:  16    -0.581568044224E+03    0.37664E-02   -0.28711E-02 78192   0.543E-01    0.270E-01
+DAV:  17    -0.581567330100E+03    0.71412E-03   -0.76415E-03 77368   0.260E-01    0.196E-01
+DAV:  18    -0.581566760631E+03    0.56947E-03   -0.33373E-03 77768   0.178E-01    0.799E-02
+DAV:  19    -0.581566880094E+03   -0.11946E-03   -0.16434E-03 78280   0.120E-01    0.109E-01
+DAV:  20    -0.581566782503E+03    0.97591E-04   -0.83320E-04 78432   0.941E-02
+   1 F= -.58156678E+03 E0= -.58156678E+03  d E =0.000000E+00
+ writing wavefunctions

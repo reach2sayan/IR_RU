@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 4252909
+##  Job Name : L123_IrRu_Ru_.25.75_1
+##  Nodelist : node[1314,1321-1322]
+##      CPUs : 20
+##  Mem/Node : 102400 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/GAMMA_L12/sqs_lev=3_a_Ir=0.25,a_Ru=0.75,c_Ru=1
+##   Started : Sun May 26 17:48:55 EDT 2019
+###############################################################################
+runstruct_vasp -w vasp.wrap srun --mpi=pmi2 -n 20

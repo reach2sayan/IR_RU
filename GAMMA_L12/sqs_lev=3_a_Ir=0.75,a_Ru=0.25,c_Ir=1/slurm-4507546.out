@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 4507546
+##  Job Name : lev3
+##  Nodelist : smp012
+##      CPUs : 64
+##  Mem/Node : 102400 MB
+## Directory : /gpfs/scratch/ssamanta/Ir_Ru/GAMMA_L12/sqs_lev=3_a_Ir=0.75,a_Ru=0.25,c_Ir=1
+##   Started : Fri May 31 19:18:19 EDT 2019
+###############################################################################
+runstruct_vasp -w vasp.wrap srun --mpi=pmi2 -n 64
