@@ -6,6 +6,7 @@ sqs_lev=1_a_Ir=0.5,a_Ru=0.5,c_Ir=1
 sqs_lev=1_a_Ir=0.5,a_Ru=0.5,c_Ru=1
 sqs_lev=1_a_Ir=1,c_Ir=0.5,c_Ru=0.5
 sqs_lev=1_a_Ru=1,c_Ir=0.5,c_Ru=0.5
+sqs_lev=2_a_Ir=0.5,a_Ru=0.5,c_Ir=0.5,c_Ru=0.5
 sqs_lev=3_a_Ir=0.25,a_Ru=0.75,c_Ir=1
 sqs_lev=3_a_Ir=0.25,a_Ru=0.75,c_Ru=1
 sqs_lev=3_a_Ir=0.75,a_Ru=0.25,c_Ir=1
