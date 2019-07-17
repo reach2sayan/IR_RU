@@ -7,7 +7,7 @@ s=s1+s2;
 time=(1:length(s)).*1.5; %eahc timestep in MD is 3 fs
 plot(time,s)
 pause
-a=s(500:end)/54; %a stores all the values in the time series
+a=s(500:end)/48; %a stores all the values in the time series
 t=length(a) %this is the total number of data points (total lenght of chain or time series)
 
 disp('loading completed');
@@ -39,6 +39,7 @@ end
 tBs=[tBs tB];
 stds=[stds std(a(1:tB:t))];
 b=a(1:tB:t);
+
 covar=cov(b(1:length(b)-1),b(2:length(b)));
 ro=[ro covar(1,2)/covar(1,1)];
 p=[p tB*var(A_b)/var(a)];
