@@ -6,4 +6,6 @@ sqs2tdb_mod
 
 *.png
 *.jpg
-
+*~
+*swp
+*#
