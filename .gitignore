@@ -1,7 +1,7 @@
 # hide WAVECAR files
 
 WAVECAR
-
+sqs2tdb_mod
 # hide image
 
 *.png
