@@ -1,9 +1,0 @@
-import numpy as np
-
-sites = []
-spec = {}
-
-def readInput():
-    sf = open("species.in","r")
-    rawsite = sf.read().split(" ")
-    for i  
