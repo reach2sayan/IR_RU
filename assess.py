@@ -1,7 +1,7 @@
 import numpy as np
 import os
 import re
-from itertools import product
+from itertools import product,chain,combinations,permutations
 
 elems = [] #holds all elements
 sites = []
@@ -86,7 +86,7 @@ def elemData(elems):
                 elem_data.update({element:tempstr})
     return elem_data
                 
-#records phase strcuture for each phases from the database
+#records phase structure for each phases from the database
 def phaseData(allPhase):
     phaseData = {} #stores phase structure in OC format per phase
     #iterate through all the phases for individual sites and species
@@ -97,12 +97,14 @@ def phaseData(allPhase):
         fphaseMult = open("./"+name+"/mult.in","r")
         #records stoichometric multiplicity for each sublattice
         smult = fphaseMult.readlines()
+        fphaseMult.close()
         smult = smult[0] 
         smult = smult.strip('\n')
         smult = smult.split("\t") #sublattice multiplicity separated by tabs
         smult = smult[:-1] #remove stray spaces
         #records species in each subblattice for the given phase
         sspec = fphaseSpec.readlines()
+        fphaseSpec.close()
         sspec = sspec[0]
         sspec = sspec.strip('\n')
         sspec = sspec.split(" ")
@@ -155,21 +157,16 @@ def tpfunc(elems,allPhase,terms,numOfparams):
             line = line + funcHead + "ABIN_" + phase +"_"+ elem + " FUN 298.15 A" + str(paramCounter) + "+A" + str(paramCounter+1) + "*T; 10000 N REFDUM"
             paramCounter = paramCounter + 2
             abinfunc.append(line)
-    frefelem = open("/users/ssamanta/atat/data/sgte_elements.tdb","r")
-    refelem = frefelem.readlines()
+
     for phase in allPhase:
-        stablePhase = 0
-        for line in refelem:
-            if phase.upper() in refelem:
-                stablephase = 1
         for element in elems:
             line = ""
             line = line + funcHead + "REF_" + phase + "_" + element.upper() + " FUN 298.15 ABIN_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + " - SGTE_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + "; 10000 N REFDUM"
             reffunc.append(line)
-    return [sgtefunc,abinfunc,reffunc]
+    return [sgtefunc,abinfunc,reffunc,paramCounter]
 #==================================================================
 
-#checks if the phase exists ini SGTE, if not then gets the stable element
+#checks if the phase exists in SGTE, if not then gets the stable element
 def availPhaseElem(phase,elem):
     #checks in the SGTE database, if found, then cool
     fstableElem = open("/users/ssamanta/atat/data/sgte_freee.tdb","r")
@@ -189,7 +186,8 @@ def availPhaseElem(phase,elem):
             return [line[2],elem]
 #===================================================================
 
-def writeToFile(elem_data,phase_data, sgtefunc, abinfunc, reffunc):
+#writes to the asses.OCM file
+def writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc):
     fasses = open("asses.OCM","w+")
     fasses.write("NEW Y\n")
 
@@ -213,13 +211,112 @@ def writeToFile(elem_data,phase_data, sgtefunc, abinfunc, reffunc):
     for line in reffunc:
         fasses.write(line+"\n")
 
+    fasses.write("\n")
+    for line in param_data:
+        fasses.write(line+"\n")
+        
+    fasses.write("\n")
+    for line in param_mixing_data:
+        fasses.write(line+"\n")
     fasses.close()
+#===================================================================
 
+def paramEndmem(allPhase,elems):
+    
+    param_data = []
+    paramHead = "ENTER PARAM "
+    for phase in allPhase:
+        phaseDict = allPhase[phase]
+        for v in product(*phaseDict.values()):
+            paramline = "G("+phase+","+":".join(v).upper()+";0) 298.15 "
+            fphaseMult = open("./"+phase+"/mult.in","r")
+            #records stoichometric multiplicity for each sublattice
+            smult = fphaseMult.readlines()
+            fphaseMult.close()
+            smult = smult[0] 
+            smult = smult.strip('\n')
+            smult = smult.split("\t") #sublattice multiplicity separated by tabs
+            smult = smult[:-1]
+            mult = []
+            for item in smult:
+                tempmult = item.split("=")
+                mult.append(tempmult[1])
+
+            paramline = paramline + "ABIN_"+phase+"_"+"".join(v).upper() + " - "
+
+            for item in zip(v,mult):
+                paramline = paramline + item[1]+"*REF_"+phase.upper()+"_"+item[0].upper()+" - "
+                
+            paramline = paramline[:-2]
+            paramline = paramline+"; 10000 N"
+            param_data.append(paramHead+paramline)
+            
+    return param_data
+#=================================================================
+
+def paramMixing(terms,elems,allPhase,paramCounter):
+    
+    param_mixing_data = []
+    elemComb = list(chain.from_iterable(combinations(elems,r) for r in range(len(elems)+1)))[1:]
+    elemdum = [list(e) for e in elemComb]
+    elemdum2 = [",".join(e).upper() for e in elemdum]
+    elemComb = elemdum2
+    dump_combins = list(permutations(elemComb,2))
+    dump_combins2 = [list(item) for item in dump_combins]
+    for combs in dump_combins2:
+        delete = 1	
+        for item in combs:
+            if len(item) > 2:
+                delete = 0
+        if delete == 1:
+            dump_combins2.remove(combs)
+
+    
+    elemComb = dump_combins2
+    
+    for phase, term in terms.items():
+        term = term[1:]
+        for oneterm in term:
+            for sublat in oneterm:
+                order = int(sublat[0])
+                level = sublat[1]
+                if order == 1:
+                    continue
+                else:
+                    for i in range(0,len(oneterm)):
+                        for comb in elemComb:
+                            elemcol = comb[:i+1]
+                            st = ":".join(elemcol)
+                            if "," in ":".join(elemcol):
+                                if len(oneterm) > 1 and ":" in st:
+                                    for lv in range(0,int(level)+1):
+                                        paramL = "ENTER PARAM L("+phase+","+st+";"+str(lv)+")" 
+                                        param_mixing_data.append(paramL)
+                                elif len(oneterm) == 1:
+                                    for lv in range(0,int(level)+1):
+                                        paramL = "ENTER PARAM L("+phase+","+st+";"+str(lv)+")"
+                                        param_mixing_data.append(paramL)
+                                        
+    param_mixing_data = list(set(param_mixing_data))
+    mixdat = []
+    for line in param_mixing_data:
+        line = line + " 298.15 A"+str(paramCounter)+" + A"+str(paramCounter+1)+"*T; 10000 N REFDUM"
+        paramCounter = paramCounter+2
+        mixdat.append(line)
+    
+    param_mixing_data.clear()
+    param_mixing_data = mixdat
+    return param_mixing_data
+#================================================================
+                    
+                
 [elems, allPhase, terms, numOfparams] = readInput()
 elem_data = elemData(elems)
 phase_data = phaseData(allPhase)
-[sgtefunc, abinfunc, reffunc] = tpfunc(elems,allPhase,terms,numOfparams)
+[sgtefunc, abinfunc, reffunc, paramCounter] = tpfunc(elems,allPhase,terms,numOfparams)
 
+param_data = paramEndmem(allPhase,elems)
+param_mixing_data = paramMixing(terms,elems,allPhase,paramCounter)
 if os.path.exists("asses.OCM"):
     os.remove("asses.OCM")
-writeToFile(elem_data,phase_data, sgtefunc, abinfunc, reffunc)
+writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc)
