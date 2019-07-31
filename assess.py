@@ -1,6 +1,8 @@
 import numpy as np
+import pandas as pd
 import os
 import re
+import shutil
 from itertools import product,chain,combinations,permutations
 
 elems = [] #holds all elements
@@ -138,7 +140,7 @@ def tpfunc(elems,allPhase,terms,numOfparams):
         for element in elems:
             for phase in allPhase:
                 if "SGTE_"+phase+"_ELEM_"+element.upper() in line:
-                    sindex = line.find(">")
+                    #sindex = line.find(">")
                     line = re.sub(r"<NL>","\n",line)
                     line = line[:-1]+ " REFDUM"
                     line = re.sub(r"FUNCTION ","",line)
@@ -146,7 +148,6 @@ def tpfunc(elems,allPhase,terms,numOfparams):
                     line = re.sub(r"   298.15", "FUN 298.15",line)
                     line = funcHead + line
                     sgtefunc.append(line)
-    
     paramCounter = 0
     for phase in allPhase:
         phaseDict = allPhase[phase]
@@ -154,14 +155,14 @@ def tpfunc(elems,allPhase,terms,numOfparams):
             line = ""
             elem = "".join(v)
             elem = elem.upper()
-            line = line + funcHead + "ABIN_" + phase +"_"+ elem + " FUN 298.15 A" + str(paramCounter) + "+A" + str(paramCounter+1) + "*T; 10000 N REFDUM"
+            line = line + funcHead + "ABIN_" + phase +"_"+ elem + " FUN 298.15 A" + str(paramCounter) + "+A" + str(paramCounter+1) + "*T; 10000 N ! REFDUM"
             paramCounter = paramCounter + 2
             abinfunc.append(line)
 
     for phase in allPhase:
         for element in elems:
             line = ""
-            line = line + funcHead + "REF_" + phase + "_" + element.upper() + " FUN 298.15 ABIN_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + " - SGTE_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + "; 10000 N REFDUM"
+            line = line + funcHead + "REF_" + phase + "_" + element.upper() + " FUN 298.15 ABIN_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + " - SGTE_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + "; 10000 N ! REFDUM"
             reffunc.append(line)
     return [sgtefunc,abinfunc,reffunc,paramCounter]
 #==================================================================
@@ -186,41 +187,6 @@ def availPhaseElem(phase,elem):
             return [line[2],elem]
 #===================================================================
 
-#writes to the asses.OCM file
-def writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc):
-    fasses = open("asses.OCM","w+")
-    fasses.write("NEW Y\n")
-
-    for line in elem_data.values():
-        fasses.write(line+"\n")
-
-    fasses.write("\n")
-    for line in phase_data.values():
-        fasses.write(line[0]+"\n")
-        fasses.write(line[1]+"\n")
-
-    fasses.write("\n")
-    for line in sgtefunc:
-        fasses.write(line+"\n")
-    
-    fasses.write("\n")
-    for line in abinfunc:
-        fasses.write(line+"\n")
-
-    fasses.write("\n")
-    for line in reffunc:
-        fasses.write(line+"\n")
-
-    fasses.write("\n")
-    for line in param_data:
-        fasses.write(line+"\n")
-        
-    fasses.write("\n")
-    for line in param_mixing_data:
-        fasses.write(line+"\n")
-    fasses.close()
-#===================================================================
-
 def paramEndmem(allPhase,elems):
     
     param_data = []
@@ -242,12 +208,13 @@ def paramEndmem(allPhase,elems):
                 tempmult = item.split("=")
                 mult.append(tempmult[1])
 
+            #following the strategy from sqs2tdb
             paramline = paramline + "ABIN_"+phase+"_"+"".join(v).upper() + " - "
 
             for item in zip(v,mult):
                 paramline = paramline + item[1]+"*REF_"+phase.upper()+"_"+item[0].upper()+" - "
                 
-            paramline = paramline[:-2]
+            paramline = paramline[:-2] #removing trailing -ve sign and space
             paramline = paramline+"; 10000 N"
             param_data.append(paramHead+paramline)
             
@@ -257,12 +224,14 @@ def paramEndmem(allPhase,elems):
 def paramMixing(terms,elems,allPhase,paramCounter):
     
     param_mixing_data = []
-    elemComb = list(chain.from_iterable(combinations(elems,r) for r in range(len(elems)+1)))[1:]
-    elemdum = [list(e) for e in elemComb]
-    elemdum2 = [",".join(e).upper() for e in elemdum]
+    #much a do to obtain the different combinations for element n at a time from total elements. We first get all combinations
+    elemComb = list(chain.from_iterable(combinations(elems,r) for r in range(len(elems)+1)))[1:] #output is as tuples
+    elemdum = [list(e) for e in elemComb] #convert to list
+    elemdum2 = [",".join(e).upper() for e in elemdum] #stich multiple element tuples with comma
     elemComb = elemdum2
-    dump_combins = list(permutations(elemComb,2))
-    dump_combins2 = [list(item) for item in dump_combins]
+    dump_combins = list(permutations(elemComb,len(elems))) #makes a permutation of different combinations (list of tuples)
+    dump_combins2 = [list(item) for item in dump_combins] #list of lists
+    #now remove single elements (covered in endmembers)
     for combs in dump_combins2:
         delete = 1	
         for item in combs:
@@ -270,17 +239,15 @@ def paramMixing(terms,elems,allPhase,paramCounter):
                 delete = 0
         if delete == 1:
             dump_combins2.remove(combs)
-
-    
-    elemComb = dump_combins2
+    elemComb = dump_combins2 #final combinations other than endmembers
     
     for phase, term in terms.items():
-        term = term[1:]
+        term = term[1:] #remove 1,0 terms, covered in end-members
         for oneterm in term:
             for sublat in oneterm:
                 order = int(sublat[0])
                 level = sublat[1]
-                if order == 1:
+                if order == 1: #end-members already covered
                     continue
                 else:
                     for i in range(0,len(oneterm)):
@@ -308,8 +275,162 @@ def paramMixing(terms,elems,allPhase,paramCounter):
     param_mixing_data = mixdat
     return param_mixing_data
 #================================================================
-                    
-                
+
+#records the different experimental enthalpy values
+def addExpEnthalpy(allPhase,expCounter):
+    
+    experiments_E = {} #record all enthalpies hashed by phase
+    for phase in allPhase:
+        exp = []
+        filePhaseConc = open("./{}/conc_energy.out".format(phase),"r")
+        filePhaseEnergy = open("./{}/y_energy.in".format(phase),"r")
+        conc = filePhaseConc.readlines()
+        energy = filePhaseEnergy.readlines()
+        filePhaseConc.close()
+        filePhaseEnergy.close()
+        for c,e in zip(conc,energy):
+            c = c.strip("\n")
+            c = c.replace("\t"," ")
+            e = e.strip("\n")
+            st = "EX"+str(expCounter)+" "+str(c)+" "+e
+            expCounter = expCounter+1
+            exp.append(st)
+        experiments_E.update({phase:exp})
+    
+    return [experiments_E, expCounter]
+#=================================================================
+
+#records the different experimental entropy values
+def addExpEntropy(allPhase,expCounter):
+    experiments_S = {} #record all entropy values
+    for phase in allPhase:
+        exp = []
+        filePhaseConc = open("./{}/conc_svib_ht.out".format(phase),"r")
+        filePhaseEnergy = open("./{}/y_svib_ht.in".format(phase),"r")
+        conc = filePhaseConc.readlines()
+        energy = filePhaseEnergy.readlines()
+        filePhaseConc.close()
+        filePhaseEnergy.close()
+        for c,e in zip(conc,energy):
+            c = c.strip("\n")
+            c = c.replace("\t"," ")
+            e = e.strip("\n")
+            st = "EX"+str(expCounter)+" "+str(c)+" "+e
+            expCounter = expCounter+1
+            exp.append(st)
+        experiments_S.update({phase:exp})
+    
+    return [experiments_S, expCounter]
+#==================================================================
+
+#writes to the asses.OCM file
+def writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc, experiments_E, experiments_S,elems):
+    fasses = open("asses.OCM","w+")
+    fasses.write("NEW Y\n")
+
+    #writes physical parameter of the elements
+    for line in elem_data.values():
+        fasses.write(line+"\n")
+
+    #writes the phase, structures and model (CEF used here)
+    fasses.write("\n")
+    for line in phase_data.values():
+        fasses.write(line[0]+"\n")
+        fasses.write(line[1]+"\n")
+
+    #writes the SGTE functions from database
+    fasses.write("\n")
+    for line in sgtefunc:
+        fasses.write(line+"\n")
+    
+    #writes the Ab-initio functions (to be fit)
+    fasses.write("\n")
+    for line in abinfunc:
+        fasses.write(line+"\n")
+
+    #writes the reference functions (in sqs2tdb strategy)
+    fasses.write("\n")
+    for line in reffunc:
+        fasses.write(line+"\n")
+
+    #writes end-member parameters
+    fasses.write("\n")
+    for line in param_data:
+        fasses.write(line+"\n")
+        
+    #writes mixing (L) parameters
+    fasses.write("\n")
+    for line in param_mixing_data:
+        fasses.write(line+"\n")
+
+    #writes enthalpy experiments
+    fasses.write("\n")
+    for phase,exp in experiments_E.items():
+        fasses.write("\n")
+        fasses.write("ENTER MANY_EQUILIBRIA")
+        compcond = []
+        colcount = 1
+        for element in elems:
+            compcond.append("X("+element+")=@"+str(colcount))
+            colcount = colcount+1
+        fasses.write("\n")
+        fasses.write("CONDITION P=1e5 T=1000 N=1 "+" ".join(compcond)+"\n")
+        fasses.write("EXPERIMENT H("+phase+")=@"+str(colcount)+":0.1"+"\n")
+        fasses.write("TABLE_START\n")
+        for line in exp:
+            fasses.write(line+"\n")
+        fasses.write("TABLE_END\n")
+
+    #writes entropy experiments
+    fasses.write("\n")
+    for phase,exp in experiments_S.items():
+        fasses.write("\n")
+        fasses.write("ENTER MANY_EQUILIBRIA")
+        compcond = []
+        colcount = 1
+        for element in elems:
+            compcond.append("X("+element+")=@"+str(colcount))
+            colcount = colcount+1
+        fasses.write("\n")
+        fasses.write("CONDITION P=1e5 T=1000 N=1 "+" ".join(compcond)+"\n")
+        fasses.write("EXPERIMENT S("+phase+")=@"+str(colcount)+":0.1"+"\n")
+        fasses.write("TABLE_START\n")
+        for line in exp:
+            fasses.write(line+"\n")
+        fasses.write("TABLE_END\n")
+
+    fasses.close()
+#===================================================================
+
+#shortens function names for OC compatibility
+def shortenFun():
+    
+    #we first record each function name and assign a unique short name
+    fileMacro = open("asses.OCM","r")
+    macro = fileMacro.readlines()
+    functions = {}
+    funccount = 0
+    for line in macro:
+        if "ENTER TP" in line:
+            lines = line.split(" ")
+            functions.update({lines[2]:"FUNC{}".format(funccount)})
+            funccount = funccount + 1
+    macro.clear()
+
+    #now re-read the file, and replace all old functions with new names
+    shortFileMacro = open("asses.OCM.tmp","w+")
+    fileMacro.seek(0,0)
+    macro = fileMacro.readlines()
+    for line in macro:
+        for oldfunc,newfunc in functions.items():
+            if oldfunc in line:
+                line = line.replace(oldfunc,newfunc)
+        shortFileMacro.write(line)
+
+    shortFileMacro.close()
+    fileMacro.close()
+#===================================================================
+
 [elems, allPhase, terms, numOfparams] = readInput()
 elem_data = elemData(elems)
 phase_data = phaseData(allPhase)
@@ -317,6 +438,17 @@ phase_data = phaseData(allPhase)
 
 param_data = paramEndmem(allPhase,elems)
 param_mixing_data = paramMixing(terms,elems,allPhase,paramCounter)
+expCounter = 0
+[experiments_E,expCounter] = addExpEnthalpy(allPhase,expCounter)
+[experiments_S,expCounter] = addExpEntropy(allPhase,expCounter)
 if os.path.exists("asses.OCM"):
     os.remove("asses.OCM")
-writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc)
+writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc,experiments_E,experiments_S,elems)
+
+if os.path.exists("asses.OCM.tmp"):
+    os.remove("asses.OCM.tmp")
+
+shortenFun()
+os.remove("asses.OCM")
+shutil.move(os.path.join(".","asses.OCM.tmp"),os.path.join(".","asses.OCM"))
+
