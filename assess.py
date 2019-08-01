@@ -1,5 +1,4 @@
 import numpy as np
-import pandas as pd
 import os
 import re
 import shutil
@@ -147,6 +146,7 @@ def tpfunc(elems,allPhase,terms,numOfparams):
                     line = re.sub(r"_ELEM","",line)
                     line = re.sub(r"   298.15", "FUN 298.15",line)
                     line = funcHead + line
+                    line = re.sub(r"! ","",line)
                     sgtefunc.append(line)
     paramCounter = 0
     for phase in allPhase:
@@ -155,14 +155,14 @@ def tpfunc(elems,allPhase,terms,numOfparams):
             line = ""
             elem = "".join(v)
             elem = elem.upper()
-            line = line + funcHead + "ABIN_" + phase +"_"+ elem + " FUN 298.15 A" + str(paramCounter) + "+A" + str(paramCounter+1) + "*T; 10000 N ! REFDUM"
+            line = line + funcHead + "ABIN_" + phase +"_"+ elem + " FUN 298.15 A" + str(paramCounter) + "+A" + str(paramCounter+1) + "*T; 10000 N REFDUM"
             paramCounter = paramCounter + 2
             abinfunc.append(line)
 
     for phase in allPhase:
         for element in elems:
             line = ""
-            line = line + funcHead + "REF_" + phase + "_" + element.upper() + " FUN 298.15 ABIN_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + " - SGTE_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + "; 10000 N ! REFDUM"
+            line = line + funcHead + "REF_" + phase + "_" + element.upper() + " FUN 298.15 ABIN_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + " - SGTE_" + availPhaseElem(phase,element.upper())[0] + "_" + element.upper() + "; 10000 N REFDUM"
             reffunc.append(line)
     return [sgtefunc,abinfunc,reffunc,paramCounter]
 #==================================================================
@@ -214,7 +214,7 @@ def paramEndmem(allPhase,elems):
             for item in zip(v,mult):
                 paramline = paramline + item[1]+"*REF_"+phase.upper()+"_"+item[0].upper()+" - "
                 
-            paramline = paramline[:-2] #removing trailing -ve sign and space
+            paramline = paramline[:-3] #removing trailing -ve sign and space
             paramline = paramline+"; 10000 N"
             param_data.append(paramHead+paramline)
             
@@ -224,56 +224,35 @@ def paramEndmem(allPhase,elems):
 def paramMixing(terms,elems,allPhase,paramCounter):
     
     param_mixing_data = []
-    #much a do to obtain the different combinations for element n at a time from total elements. We first get all combinations
-    elemComb = list(chain.from_iterable(combinations(elems,r) for r in range(len(elems)+1)))[1:] #output is as tuples
-    elemdum = [list(e) for e in elemComb] #convert to list
-    elemdum2 = [",".join(e).upper() for e in elemdum] #stich multiple element tuples with comma
-    elemComb = elemdum2
-    dump_combins = list(permutations(elemComb,len(elems))) #makes a permutation of different combinations (list of tuples)
-    dump_combins2 = [list(item) for item in dump_combins] #list of lists
-    #now remove single elements (covered in endmembers)
-    for combs in dump_combins2:
-        delete = 1	
-        for item in combs:
-            if len(item) > 2:
-                delete = 0
-        if delete == 1:
-            dump_combins2.remove(combs)
-    elemComb = dump_combins2 #final combinations other than endmembers
-    
-    for phase, term in terms.items():
-        term = term[1:] #remove 1,0 terms, covered in end-members
+    params = {}
+    for phase,term in terms.items():
         for oneterm in term:
-            for sublat in oneterm:
-                order = int(sublat[0])
-                level = sublat[1]
-                if order == 1: #end-members already covered
-                    continue
-                else:
-                    for i in range(0,len(oneterm)):
-                        for comb in elemComb:
-                            elemcol = comb[:i+1]
-                            st = ":".join(elemcol)
-                            if "," in ":".join(elemcol):
-                                if len(oneterm) > 1 and ":" in st:
-                                    for lv in range(0,int(level)+1):
-                                        paramL = "ENTER PARAM L("+phase+","+st+";"+str(lv)+")" 
-                                        param_mixing_data.append(paramL)
-                                elif len(oneterm) == 1:
-                                    for lv in range(0,int(level)+1):
-                                        paramL = "ENTER PARAM L("+phase+","+st+";"+str(lv)+")"
-                                        param_mixing_data.append(paramL)
-                                        
-    param_mixing_data = list(set(param_mixing_data))
-    mixdat = []
-    for line in param_mixing_data:
-        line = line + " 298.15 A"+str(paramCounter)+" + A"+str(paramCounter+1)+"*T; 10000 N REFDUM"
-        paramCounter = paramCounter+2
-        mixdat.append(line)
-    
-    param_mixing_data.clear()
-    param_mixing_data = mixdat
-    return param_mixing_data
+            elemComb = list(chain.from_iterable(combinations(elems,r) for r in range(len(term)+1)))[1:]
+            elemdum = [",".join(e).upper() for e in elemComb]
+            elemComb = elemdum
+            #print(phase+" "+str(elemComb))
+            lev = 0
+            for sublats in oneterm:
+                #print(phase+" "+str(sublats))
+                if int(sublats[1]) >= lev:
+                    lev = int(sublats[1])
+                perm = list(permutations(elemComb,len(oneterm)))
+                permdum = [":".join(e) for e in perm]
+                perm = permdum
+        params.update({phase:[perm, lev]})
+    for phase,key in params.items():
+        for item in key[0]:
+            oneitem = item.split(":")
+            #print(phase+" "+str(oneitem))
+            for pieces in oneitem:
+                if "," in pieces:
+                    for i in range(key[1]+1):
+                        line = "L("+phase+","+":".join(oneitem)+";"+str(i)+")"
+                        line = line + " A"+str(paramCounter) + "+A"+str(paramCounter+1)+"*T"+"; 10000 N REFDUM"
+                        paramCounter = paramCounter+2
+                        param_mixing_data.append("ENTER PARAM "+line)
+
+    return [param_mixing_data, paramCounter]
 #================================================================
 
 #records the different experimental enthalpy values
@@ -295,6 +274,8 @@ def addExpEnthalpy(allPhase,expCounter):
             st = "EX"+str(expCounter)+" "+str(c)+" "+e
             expCounter = expCounter+1
             exp.append(st)
+        if len(exp) == 0:
+            continue
         experiments_E.update({phase:exp})
     
     return [experiments_E, expCounter]
@@ -318,15 +299,18 @@ def addExpEntropy(allPhase,expCounter):
             st = "EX"+str(expCounter)+" "+str(c)+" "+e
             expCounter = expCounter+1
             exp.append(st)
+        if len(exp) == 0:
+            continue
         experiments_S.update({phase:exp})
     
     return [experiments_S, expCounter]
 #==================================================================
 
 #writes to the asses.OCM file
-def writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc, experiments_E, experiments_S,elems):
+def writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc, experiments_E, experiments_S,elems,paramCounter,expCounter):
     fasses = open("asses.OCM","w+")
-    fasses.write("NEW Y\n")
+    fasses.write("NEW Y\n\n")
+    fasses.write("ENTER OPT_COEF {}\n\n".format(paramCounter))
 
     #writes physical parameter of the elements
     for line in elem_data.values():
@@ -399,6 +383,16 @@ def writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, 
             fasses.write(line+"\n")
         fasses.write("TABLE_END\n")
 
+    #write range of experiments to consider
+    fasses.write("\n")
+    fasses.write("SET RANGE_EXP 2 {}".format(expCounter))
+
+    #write initial guess for params
+    fasses.write("\n")
+    for i in range(0,paramCounter):
+        fasses.write("SET VAR {} 100\n".format(i))
+
+    fasses.write("\nOPT 1000\nSET INTER")
     fasses.close()
 #===================================================================
 
@@ -437,13 +431,13 @@ phase_data = phaseData(allPhase)
 [sgtefunc, abinfunc, reffunc, paramCounter] = tpfunc(elems,allPhase,terms,numOfparams)
 
 param_data = paramEndmem(allPhase,elems)
-param_mixing_data = paramMixing(terms,elems,allPhase,paramCounter)
+[param_mixing_data, paramCounter] = paramMixing(terms,elems,allPhase,paramCounter)
 expCounter = 0
 [experiments_E,expCounter] = addExpEnthalpy(allPhase,expCounter)
 [experiments_S,expCounter] = addExpEntropy(allPhase,expCounter)
 if os.path.exists("asses.OCM"):
     os.remove("asses.OCM")
-writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc,experiments_E,experiments_S,elems)
+writeToFile(elem_data, phase_data, param_data, param_mixing_data, sgtefunc, abinfunc, reffunc,experiments_E,experiments_S,elems,paramCounter,expCounter)
 
 if os.path.exists("asses.OCM.tmp"):
     os.remove("asses.OCM.tmp")
