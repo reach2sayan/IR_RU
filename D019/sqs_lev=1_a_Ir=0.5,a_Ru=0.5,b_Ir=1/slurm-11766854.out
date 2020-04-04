@@ -1,0 +1,10 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 11766854
+##  Job Name : D019_IrRu,Ir_1
+##  Nodelist : node[1715,1730]
+##      CPUs : 64
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/D019/sqs_lev=1_a_Ir=0.5,a_Ru=0.5,b_Ir=1
+##   Started : Fri Apr  3 15:53:10 EDT 2020
+###############################################################################
+runstruct_vasp -w vasp.wrap srun --mpi=pmi2 -n 64

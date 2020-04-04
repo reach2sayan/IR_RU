@@ -1,0 +1,88 @@
+ running on   64 total cores
+ distrk:  each k-point on   64 cores,    1 groups
+ distr:  one band on    1 cores,   64 groups
+ using from now: INCAR     
+ vasp.5.4.1 24Jun15 (build Dec 12 2017 15:24:27) complex                        
+  
+ POSCAR found type information on POSCAR  Ir
+ POSCAR found :  1 types and       8 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default, NPAR=number of cores might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ FFT: planning ...
+ WAVECAR not read
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+RMM:   1     0.333043487267E+03    0.33304E+03   -0.12891E+04 13888   0.443E+02
+RMM:   2     0.664939815288E+01   -0.32639E+03   -0.30692E+03 13888   0.162E+02
+RMM:   3    -0.564171988585E+02   -0.63067E+02   -0.34918E+02 13888   0.665E+01
+RMM:   4    -0.721278078040E+02   -0.15711E+02   -0.69567E+01 13888   0.336E+01
+RMM:   5    -0.740746081747E+02   -0.19468E+01   -0.14702E+01 13888   0.147E+01
+RMM:   6    -0.744863238724E+02   -0.41172E+00   -0.33958E+00 13888   0.731E+00
+RMM:   7    -0.745774495439E+02   -0.91126E-01   -0.85198E-01 13888   0.363E+00
+RMM:   8    -0.746014220607E+02   -0.23973E-01   -0.22858E-01 13888   0.196E+00
+RMM:   9    -0.746099046965E+02   -0.84826E-02   -0.83177E-02 32493   0.104E+00
+RMM:  10    -0.746108018967E+02   -0.89720E-03   -0.88062E-03 34199   0.258E-01
+RMM:  11    -0.746108449281E+02   -0.43031E-04   -0.43124E-04 31727   0.905E-02
+RMM:  12    -0.746108501292E+02   -0.52011E-05   -0.51022E-05 30803   0.164E-02    0.124E+01
+RMM:  13    -0.709793770179E+02    0.36315E+01   -0.43239E+00 29250   0.967E+00    0.467E+00
+RMM:  14    -0.703200571612E+02    0.65932E+00   -0.15671E+00 30582   0.526E+00    0.557E-01
+RMM:  15    -0.702729521514E+02    0.47105E-01   -0.43584E-02 30921   0.103E+00    0.171E-01
+RMM:  16    -0.702723284080E+02    0.62374E-03   -0.40512E-03 31247   0.208E-01    0.354E-02
+RMM:  17    -0.702723430005E+02   -0.14593E-04   -0.20169E-04 32359   0.449E-02
+   1 F= -.70272343E+02 E0= -.70272343E+02  d E =0.000000E+00
+ writing wavefunctions
+[18] Failed to dealloc pd (Device or resource busy)
+[2] Failed to dealloc pd (Device or resource busy)
+[1] Failed to dealloc pd (Device or resource busy)
+[3] Failed to dealloc pd (Device or resource busy)
+[0] Failed to dealloc pd (Device or resource busy)
+[4] Failed to dealloc pd (Device or resource busy)
+[9] Failed to dealloc pd (Device or resource busy)
+[8] Failed to dealloc pd (Device or resource busy)
+[50] Failed to dealloc pd (Device or resource busy)
+[48] Failed to dealloc pd (Device or resource busy)
+[49] Failed to dealloc pd (Device or resource busy)
+[59] Failed to dealloc pd (Device or resource busy)
+[17] Failed to dealloc pd (Device or resource busy)
+[19] Failed to dealloc pd (Device or resource busy)
+[43] Failed to dealloc pd (Device or resource busy)
+[41] Failed to dealloc pd (Device or resource busy)
+[34] Failed to dealloc pd (Device or resource busy)
+[16] Failed to dealloc pd (Device or resource busy)
+[51] Failed to dealloc pd (Device or resource busy)
+[42] Failed to dealloc pd (Device or resource busy)
+[40] Failed to dealloc pd (Device or resource busy)
+[35] Failed to dealloc pd (Device or resource busy)
+[56] Failed to dealloc pd (Device or resource busy)
+[57] Failed to dealloc pd (Device or resource busy)
+[58] Failed to dealloc pd (Device or resource busy)
+[11] Failed to dealloc pd (Device or resource busy)
+[10] Failed to dealloc pd (Device or resource busy)
+[25] Failed to dealloc pd (Device or resource busy)
+[24] Failed to dealloc pd (Device or resource busy)
+[20] Failed to dealloc pd (Device or resource busy)
+[26] Failed to dealloc pd (Device or resource busy)
+[27] Failed to dealloc pd (Device or resource busy)

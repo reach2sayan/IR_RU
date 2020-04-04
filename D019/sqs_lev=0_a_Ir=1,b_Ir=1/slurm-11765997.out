@@ -1,0 +1,12 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 11765997
+##  Job Name : D019_IrIr_0
+##  Nodelist : node[1613,1615-1617,1619,1622,1625-1627]
+##      CPUs : 64
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/D019/sqs_lev=0_a_Ir=1,b_Ir=1
+##   Started : Fri Apr  3 13:46:23 EDT 2020
+###############################################################################
+runstruct_vasp -w vasp.wrap srun --mpi=pmi2 -n 64
+<stdin>:16:2: error: invalid preprocessing directive #VOSKOWN
+<stdin>:18:2: error: invalid preprocessing directive #ISPIN

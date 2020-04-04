@@ -1,0 +1,9 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 11770260
+##  Job Name : fitfc_IrRup+0
+##  Nodelist : node[1337-1338]
+##      CPUs : 64
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/scratch/ssamanta/D019/sqs_lev=0_a_Ir=1,b_Ru=1/vol_0/p+0.04_11.0202_0
+##   Started : Fri Apr  3 19:55:38 EDT 2020
+###############################################################################
