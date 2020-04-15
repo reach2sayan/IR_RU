@@ -1,0 +1,148 @@
+ running on   96 total cores
+ distrk:  each k-point on   24 cores,    4 groups
+ distr:  one band on   24 cores,    1 groups
+ using from now: INCAR     
+ vasp.5.4.1 24Jun15 (build Dec 12 2017 15:24:27) complex                        
+  
+ POSCAR found :  1 types and     480 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default, NPAR=number of cores might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      You have enabled k-point parallelism (KPAR>1).                         |
+|      This developmental code was originally  written by Paul Kent at ORNL,  |
+|      and carefully double checked in Vienna.                                |
+|      GW as well as linear response parallelism added by Martijn Marsman     |
+|      and Georg Kresse.                                                      |
+|      Carefully verify results versus KPAR=1.                                |
+|      Report problems to Paul Kent and Vienna.                               |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ found WAVECAR, reading the header
+  number of bands has changed, file:   512 present:  2304
+  trying to continue reading WAVECAR, but it might fail
+  number of k-points has changed, file:    33 present:    14
+  trying to continue reading WAVECAR, but it might fail
+ WAVECAR: different cutoff or change in lattice found
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      Your FFT grids (NGX,NGY,NGZ) are not sufficient for an accurate        |
+|      calculation.                                                           |
+|      The results might be wrong                                             |
+|      good settings for NGX NGY and  NGZ are                                 |
+|                       125 125  and 125                                      |
+|     Mind: This setting results in a small but reasonable wrap around error  |
+|     It is also necessary to adjust these  values to the FFT routines you use|
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ WARNING: small aliasing (wrap around) errors must be expected
+ FFT: planning ...
+ reading WAVECAR
+ random initialization beyond band          513
+ the WAVECAR file was read successfully
+ WARNING: number of atoms are different on CHGCAR file
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+RMM:   1     0.622573158925E+05    0.62257E+05   -0.25558E+04106577   0.736E+01    0.370E+02
+RMM:   2     0.600298177696E+05   -0.22275E+04   -0.97449E+04123900   0.201E+02    0.231E+02
+RMM:   3     0.574132801306E+05   -0.26165E+04   -0.54139E+04129022   0.163E+02    0.629E+01
+RMM:   4     0.563892283925E+05   -0.10241E+04   -0.25550E+04129024   0.999E+01    0.599E+01
+RMM:   5     0.550739282914E+05   -0.13153E+04   -0.13445E+04129022   0.622E+01    0.849E+01
+RMM:   6     0.542868970913E+05   -0.78703E+03   -0.74293E+03129023   0.457E+01    0.109E+02
+RMM:   7     0.535916514331E+05   -0.69525E+03   -0.58488E+03129023   0.396E+01    0.141E+02
+RMM:   8     0.529515425022E+05   -0.64011E+03   -0.54430E+03129022   0.356E+01    0.173E+02
+RMM:   9     0.523449212039E+05   -0.60662E+03   -0.44927E+03129022   0.325E+01    0.212E+02
+RMM:  10     0.519903661613E+05   -0.35456E+03   -0.34754E+03129023   0.292E+01    0.239E+02
+RMM:  11     0.516935128397E+05   -0.29685E+03   -0.30325E+03129024   0.269E+01    0.262E+02
+RMM:  12     0.513625916238E+05   -0.33092E+03   -0.27336E+03129024   0.257E+01    0.292E+02
+RMM:  13     0.508304744550E+05   -0.53212E+03   -0.30934E+03129022   0.255E+01    0.333E+02
+RMM:  14     0.512379986145E+05    0.40752E+03   -0.12226E+03129024   0.236E+01    0.329E+02
+RMM:  15     0.515215111356E+05    0.28351E+03   -0.89516E+02129024   0.231E+01    0.318E+02
+RMM:  16     0.517115204894E+05    0.19001E+03   -0.88451E+02129024   0.209E+01    0.301E+02
+RMM:  17     0.519359384731E+05    0.22442E+03   -0.67846E+02129024   0.184E+01    0.288E+02
+RMM:  18     0.520490828746E+05    0.11314E+03   -0.53688E+02129024   0.169E+01    0.283E+02
+RMM:  19     0.519820662429E+05   -0.67017E+02   -0.57728E+02129024   0.155E+01    0.290E+02
+RMM:  20     0.521683885343E+05    0.18632E+03   -0.51232E+02129024   0.158E+01    0.277E+02
+RMM:  21     0.522260580414E+05    0.57670E+02   -0.42938E+02129024   0.143E+01    0.274E+02
+RMM:  22     0.521981203573E+05   -0.27938E+02   -0.36355E+02129024   0.135E+01    0.279E+02
+RMM:  23     0.520095953999E+05   -0.18852E+03   -0.36635E+02129017   0.131E+01    0.290E+02
+RMM:  24     0.519846356356E+05   -0.24960E+02   -0.39067E+02129011   0.131E+01    0.291E+02
+RMM:  25     0.520889115164E+05    0.10428E+03   -0.31596E+02129010   0.127E+01    0.278E+02
+RMM:  26     0.521426653453E+05    0.53754E+02   -0.27523E+02128949   0.116E+01    0.273E+02
+RMM:  27     0.521286405069E+05   -0.14025E+02   -0.21435E+02128954   0.109E+01    0.275E+02
+RMM:  28     0.520736135798E+05   -0.55027E+02   -0.10736E+02128965   0.106E+01    0.281E+02
+RMM:  29     0.521334859830E+05    0.59872E+02   -0.41764E+01128999   0.102E+01    0.275E+02
+RMM:  30     0.521622898099E+05    0.28804E+02   -0.86281E+01129024   0.943E+00    0.272E+02
+RMM:  31     0.521459834010E+05   -0.16306E+02   -0.14605E+02129015   0.888E+00    0.273E+02
+RMM:  32     0.522016551816E+05    0.55672E+02    0.62510E+01129024   0.940E+00    0.268E+02
+RMM:  33     0.522023178781E+05    0.66270E+00   -0.28189E+01129024   0.852E+00    0.268E+02
+RMM:  34     0.521926348762E+05   -0.96830E+01   -0.10488E+02129024   0.804E+00    0.269E+02
+RMM:  35     0.521860369864E+05   -0.65979E+01   -0.93057E+01129024   0.823E+00    0.270E+02
+RMM:  36     0.521951250762E+05    0.90881E+01   -0.11826E+02129024   0.813E+00    0.267E+02
+RMM:  37     0.522065165801E+05    0.11392E+02   -0.16152E+02129018   0.813E+00    0.262E+02
+RMM:  38     0.521992306783E+05   -0.72859E+01   -0.16134E+02129024   0.807E+00    0.261E+02
+RMM:  39     0.521821808753E+05   -0.17050E+02   -0.17430E+02129024   0.790E+00    0.262E+02
+RMM:  40     0.521624563957E+05   -0.19724E+02   -0.19697E+02129022   0.789E+00    0.262E+02
+RMM:  41     0.521430910218E+05   -0.19365E+02   -0.18574E+02129024   0.775E+00    0.264E+02
+RMM:  42     0.521240469257E+05   -0.19044E+02   -0.17845E+02129024   0.780E+00    0.265E+02
+RMM:  43     0.521073483654E+05   -0.16699E+02   -0.17677E+02129022   0.779E+00    0.266E+02
+RMM:  44     0.520978948593E+05   -0.94535E+01   -0.17765E+02129022   0.774E+00    0.267E+02
+RMM:  45     0.520790117829E+05   -0.18883E+02   -0.17981E+02129022   0.762E+00    0.269E+02
+RMM:  46     0.520639721910E+05   -0.15040E+02   -0.17259E+02129022   0.750E+00    0.272E+02
+RMM:  47     0.517979187941E+05   -0.26605E+03   -0.23595E+02128989   0.899E+00    0.314E+02
+RMM:  48     0.517918371293E+05   -0.60817E+01   -0.15460E+02129014   0.853E+00    0.321E+02
+RMM:  49     0.517764326609E+05   -0.15404E+02   -0.18523E+02129022   0.811E+00    0.327E+02
+RMM:  50     0.517594134697E+05   -0.17019E+02   -0.16439E+02129001   0.818E+00    0.331E+02
+RMM:  51     0.517330551239E+05   -0.26358E+02   -0.16432E+02129004   0.823E+00    0.335E+02
+RMM:  52     0.519391667173E+05    0.20611E+03   -0.59016E+03125119   0.518E+01    0.199E+02
+RMM:  53     0.523039156595E+05    0.36475E+03   -0.99659E+02126209   0.284E+01    0.131E+02
+RMM:  54     0.523222697664E+05    0.18354E+02   -0.58329E+02128842   0.186E+01    0.124E+02
+RMM:  55     0.522979256787E+05   -0.24344E+02   -0.56411E+02129006   0.146E+01    0.127E+02
+RMM:  56     0.522853998029E+05   -0.12526E+02   -0.42997E+02128999   0.122E+01    0.122E+02
+RMM:  57     0.509341118352E+05   -0.13513E+04   -0.79368E+03129013   0.456E+01    0.204E+02
+RMM:  58     0.514272366095E+05    0.49312E+03   -0.25288E+03129006   0.287E+01    0.192E+02
+RMM:  59     0.514457262429E+05    0.18490E+02   -0.11755E+03128993   0.192E+01    0.187E+02
+RMM:  60     0.514128038045E+05   -0.32922E+02   -0.10878E+03128989   0.158E+01
+   1 F= 0.51412804E+05 E0= 0.51412803E+05  d E =0.302775E-02
+ writing wavefunctions

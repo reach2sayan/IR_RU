@@ -1,8 +1,6 @@
 [INCAR]
 SYSTEM = Ir_Ru
-ISTART = 0
-ICHARG = 2
-PREC = Accurate
+PREC = Normal
 ALGO = Very_Fast
 ISMEAR = 1
 SIGMA = 0.1
@@ -15,5 +13,5 @@ ICHARG = 1
 ISTART = 2
 IBRION = -1
 ISIF = 2
-NPAR = 15
-KPAR = 10
+NCORE = 24
+KPAR = 4

@@ -1,0 +1,11 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 11929444
+##  Job Name : p_uns_IrIr
+##  Nodelist : node[1042-1045]
+##      CPUs : 96
+##  Mem/Node : 102400 MB
+## Directory : /gpfs/scratch/ssamanta/D019/sqs_lev=0_a_Ir=1,b_Ir=1/vol_0/p_uns_0.2_1000_1835
+##   Started : Sun Apr  5 19:19:47 EDT 2020
+###############################################################################
+Broken pipe
+slurmstepd: error: *** JOB 11929444 ON node1042 CANCELLED AT 2020-04-07T19:19:54 DUE TO TIME LIMIT ***

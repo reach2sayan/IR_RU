@@ -1,0 +1,1520 @@
+ running on   96 total cores
+ distrk:  each k-point on   24 cores,    4 groups
+ distr:  one band on   24 cores,    1 groups
+ using from now: INCAR     
+ vasp.5.4.1 24Jun15 (build Dec 12 2017 15:24:27) complex                        
+  
+ POSCAR found :  1 types and     480 ions
+ scaLAPACK will be used
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      For optimal performance we recommend to set                            |
+|        NCORE= 4 - approx SQRT( number of cores)                             |
+|      NCORE specifies how many cores store one orbital (NPAR=cpu/NCORE).     |
+|      This setting can  greatly improve the performance of VASP for DFT.     |
+|      The default, NPAR=number of cores might be grossly inefficient         |
+|      on modern multi-core architectures or massively parallel machines.     |
+|      Do your own testing !!!!                                               |
+|      Unfortunately you need to use the default for GW and RPA calculations. |
+|      (for HF NCORE is supported but not extensively tested yet)             |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+
+ ----------------------------------------------------------------------------- 
+|                                                                             |
+|           W    W    AA    RRRRR   N    N  II  N    N   GGGG   !!!           |
+|           W    W   A  A   R    R  NN   N  II  NN   N  G    G  !!!           |
+|           W    W  A    A  R    R  N N  N  II  N N  N  G       !!!           |
+|           W WW W  AAAAAA  RRRRR   N  N N  II  N  N N  G  GGG   !            |
+|           WW  WW  A    A  R   R   N   NN  II  N   NN  G    G                |
+|           W    W  A    A  R    R  N    N  II  N    N   GGGG   !!!           |
+|                                                                             |
+|      You have enabled k-point parallelism (KPAR>1).                         |
+|      This developmental code was originally  written by Paul Kent at ORNL,  |
+|      and carefully double checked in Vienna.                                |
+|      GW as well as linear response parallelism added by Martijn Marsman     |
+|      and Georg Kresse.                                                      |
+|      Carefully verify results versus KPAR=1.                                |
+|      Report problems to Paul Kent and Vienna.                               |
+|                                                                             |
+ ----------------------------------------------------------------------------- 
+
+ LDA part: xc-table for Pade appr. of Perdew
+ found WAVECAR, reading the header
+  number of bands has changed, file:   576 present:  2592
+  trying to continue reading WAVECAR, but it might fail
+  number of k-points has changed, file:    33 present:    19
+  trying to continue reading WAVECAR, but it might fail
+ WAVECAR: different cutoff or change in lattice found
+ POSCAR, INCAR and KPOINTS ok, starting setup
+ WARNING: small aliasing (wrap around) errors must be expected
+ FFT: planning ...
+ reading WAVECAR
+ random initialization beyond band          577
+ the WAVECAR file was read successfully
+ WARNING: number of atoms are different on CHGCAR file
+ entering main loop
+       N       E                     dE             d eps       ncg     rms          rms(c)
+RMM:   1     0.648632653190E+05    0.64863E+05   -0.17632E+04166808   0.529E+01    0.391E+02
+RMM:   2     0.619686801991E+05   -0.28946E+04   -0.11484E+05195519   0.178E+02    0.225E+02
+RMM:   3     0.597385788487E+05   -0.22301E+04   -0.51896E+04196568   0.128E+02    0.404E+01
+RMM:   4     0.566025057596E+05   -0.31361E+04   -0.30843E+04196976   0.820E+01    0.507E+01
+RMM:   5     0.544667138378E+05   -0.21358E+04   -0.21390E+04196992   0.624E+01    0.647E+01
+RMM:   6     0.530785350056E+05   -0.13882E+04   -0.14403E+04196992   0.506E+01    0.701E+01
+RMM:   7     0.521268499485E+05   -0.95169E+03   -0.10257E+04196967   0.446E+01    0.661E+01
+RMM:   8     0.512568430610E+05   -0.87001E+03   -0.81369E+03196992   0.384E+01    0.803E+01
+RMM:   9     0.505224905519E+05   -0.73435E+03   -0.66856E+03196992   0.342E+01    0.101E+02
+RMM:  10     0.500573139088E+05   -0.46518E+03   -0.52828E+03196974   0.332E+01    0.942E+01
+RMM:  11     0.494562567098E+05   -0.60106E+03   -0.70548E+03196705   0.378E+01    0.767E+01
+RMM:  12     0.493251873671E+05   -0.13107E+03   -0.48110E+03196903   0.308E+01    0.656E+01
+RMM:  13     0.492956478104E+05   -0.29540E+02   -0.31357E+03196894   0.274E+01    0.549E+01
+RMM:  14     0.490632349158E+05   -0.23241E+03   -0.27493E+03196886   0.245E+01    0.477E+01
+RMM:  15     0.488166100918E+05   -0.24662E+03   -0.24592E+03196992   0.225E+01    0.436E+01
+RMM:  16     0.485817228008E+05   -0.23489E+03   -0.21134E+03196702   0.205E+01    0.430E+01
+RMM:  17     0.484030156665E+05   -0.17871E+03   -0.18847E+03196938   0.196E+01    0.414E+01
+RMM:  18     0.482302027501E+05   -0.17281E+03   -0.17084E+03196801   0.186E+01    0.410E+01
+RMM:  19     0.480728002526E+05   -0.15740E+03   -0.14991E+03196857   0.178E+01    0.427E+01
+RMM:  20     0.479535113351E+05   -0.11929E+03   -0.12989E+03196703   0.172E+01    0.430E+01
+RMM:  21     0.478327207420E+05   -0.12079E+03   -0.12373E+03196781   0.171E+01    0.449E+01
+RMM:  22     0.477340974062E+05   -0.98623E+02   -0.11361E+03196766   0.165E+01    0.462E+01
+RMM:  23     0.476662628134E+05   -0.67835E+02   -0.11385E+03196661   0.167E+01    0.439E+01
+RMM:  24     0.475991552161E+05   -0.67108E+02   -0.91972E+02196893   0.155E+01    0.419E+01
+RMM:  25     0.475282414055E+05   -0.70914E+02   -0.72063E+02196992   0.145E+01    0.416E+01
+RMM:  26     0.474611095182E+05   -0.67132E+02   -0.64640E+02196985   0.139E+01    0.430E+01
+RMM:  27     0.474028764832E+05   -0.58233E+02   -0.60501E+02196939   0.134E+01    0.432E+01
+RMM:  28     0.473475894068E+05   -0.55287E+02   -0.54919E+02196992   0.129E+01    0.442E+01
+RMM:  29     0.472949622165E+05   -0.52627E+02   -0.51790E+02196992   0.125E+01    0.452E+01
+RMM:  30     0.472456527184E+05   -0.49309E+02   -0.48771E+02196781   0.121E+01    0.458E+01
+RMM:  31     0.472007371276E+05   -0.44916E+02   -0.45397E+02196895   0.117E+01    0.459E+01
+RMM:  32     0.471596342750E+05   -0.41103E+02   -0.42535E+02196669   0.114E+01    0.453E+01
+RMM:  33     0.471192466485E+05   -0.40388E+02   -0.40967E+02196818   0.116E+01    0.451E+01
+RMM:  34     0.470661329432E+05   -0.53114E+02   -0.45566E+02196908   0.121E+01    0.480E+01
+RMM:  35     0.470341224905E+05   -0.32010E+02   -0.33218E+02196992   0.112E+01    0.508E+01
+RMM:  36     0.469923699365E+05   -0.41753E+02   -0.34609E+02196960   0.111E+01    0.539E+01
+RMM:  37     0.469605428428E+05   -0.31827E+02   -0.31375E+02196991   0.107E+01    0.569E+01
+RMM:  38     0.469267622112E+05   -0.33781E+02   -0.31125E+02196921   0.104E+01    0.601E+01
+RMM:  39     0.468809768882E+05   -0.45785E+02   -0.31341E+02196893   0.105E+01    0.645E+01
+RMM:  40     0.468204429727E+05   -0.60534E+02   -0.34690E+02196888   0.109E+01    0.696E+01
+RMM:  41     0.468137786184E+05   -0.66644E+01   -0.25340E+02196282   0.101E+01    0.711E+01
+RMM:  42     0.467829284694E+05   -0.30850E+02   -0.26569E+02196992   0.975E+00    0.739E+01
+RMM:  43     0.467515362853E+05   -0.31392E+02   -0.26970E+02196969   0.957E+00    0.772E+01
+RMM:  44     0.467039138818E+05   -0.47622E+02   -0.25882E+02196862   0.968E+00    0.809E+01
+RMM:  45     0.466471087618E+05   -0.56805E+02   -0.29627E+02196754   0.973E+00    0.868E+01
+RMM:  46     0.466229950858E+05   -0.24114E+02   -0.25725E+02196989   0.940E+00    0.897E+01
+RMM:  47     0.465643727902E+05   -0.58622E+02   -0.40356E+02195259   0.102E+01    0.915E+01
+srun: Job step aborted: Waiting up to 62 seconds for job step to finish.
+slurmstepd: error: *** STEP 11929444.0 ON node1042 CANCELLED AT 2020-04-07T19:19:54 DUE TO TIME LIMIT ***
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F02C1131370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F02B4798E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F3DDB837370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F3DCEE9EE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F55BDFE3370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F55B164AE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F9C3D19B370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F9C30802E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FEE349A8370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FEE2800FE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F85F153A370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F85E4BA1E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F39B72E1370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F39AA948E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FED75328370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FED6898FE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FDCF1647370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FDCE4CAEE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FBF0174A370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FBEF4DB1E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F04CBF74370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F04BF5DBE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FADE0114370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FADD377BE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FEE30740370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FEE23DA7E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FA218984370  Unknown               Unknown  Unknown
+libpthread-2.17.s  00007FA218981213  pthread_spin_lock     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FBE056A3370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FBDF8D0AE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F8822595370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F8815BFCE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F83AD601370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F83A0C68E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FB48F132370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FB482799E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F55492C4370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F553C92BE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FE36DA7C370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FE3610E3E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F4AC0027370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F4AB368EE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F35CBC80370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F35BF2E7E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F9D2FDAC370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F9D23413E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FF6FDAA3370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FF6F110AE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F2102C2B370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F20F6292E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F499384A370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F4986EB1E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FC8DE9C7370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FC8D202EE71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FA053C79370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FA0472E0E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F4D0A2ED370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F4CFD954E71  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FB88BA0D370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FB87F075CA7  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F4645747370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F4638DAFCA7  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F6642402370  Unknown               Unknown  Unknown
+libpthread-2.17.s  00007F66423FF213  pthread_spin_lock     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F74148E5370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F7407F4DCA7  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FDAF2EF3370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007FDAE655BCA7  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F26627B5370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F2655E1DCA7  mkl_blas_avx2_dge     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FEF12463370  Unknown               Unknown  Unknown
+libpthread-2.17.s  00007FEF12460213  pthread_spin_lock     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F7E69387370  Unknown               Unknown  Unknown
+vasp_std           00000000005DBCBD  Unknown               Unknown  Unknown
+vasp_std           00000000005DD387  Unknown               Unknown  Unknown
+vasp_std           0000000000606371  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F7E68FD8B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F6C9DB02370  Unknown               Unknown  Unknown
+libc-2.17.so       00007F6C9D823D9A  mmap64                Unknown  Unknown
+libmpi.so.12.1.0   00007F6C9E3DCC99  _int_malloc           Unknown  Unknown
+libmpi.so.12.1.0   00007F6C9E3DD01B  malloc                Unknown  Unknown
+libmkl_core.so     00007F6C9F36298E  mkl_serv_malloc       Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F165E5A2370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F165EE34DF8  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F165EE2CAD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F165EDA6B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F165EDA698C  MPIC_Sendrecv         Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F2FE505C370  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F2FD84C623D  Unknown               Unknown  Unknown
+libmkl_avx2.so     00007F2FD84C834B  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007F2FD84D7F28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007F2FE84E1062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_core.so     00007F6C9F361D1D  mkl_serv_allocate     Unknown  Unknown
+libmkl_avx2.so     00007F6C90F6C3A6  mkl_blas_avx2_dge     Unknown  Unknown
+libmkl_avx2.so     00007F6C90F6D7D9  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007F6C90F7DF28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007F6CA0F87062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_intel_thre  00007F6CA0FBDF34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007F6CA291F8A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005DB734  Unknown               Unknown  Unknown
+vasp_std           00000000005DD387  Unknown               Unknown  Unknown
+vasp_std           0000000000606371  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F165ECF069F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F165ECF0327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007F165EC8EFD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F165EC8E8E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007F165F51AD1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+libmkl_intel_thre  00007F2FE8517F34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007F2FE9E798A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005E2A6C  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F2FE4CADB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F6C9D753B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F165E1F3B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F4DDF181370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F4DDFA4AA6F  avlfindex             Unknown  Unknown
+libmpi.so.12.1.0   00007F4DDFA310EE  find_and_free_dre     Unknown  Unknown
+libmpi.so.12.1.0   00007F4DDFA595CC  mvapich2_munmap       Unknown  Unknown
+libmpi.so.12.1.0   00007F4DDFA5C80F  free                  Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F1476FFA370  Unknown               Unknown  Unknown
+libc-2.17.so       00007F1476D1BBF9  syscall               Unknown  Unknown
+libmpi.so.12.1.0   00007F14778D25DE  mvapich2_munmap       Unknown  Unknown
+libmpi.so.12.1.0   00007F14778D580F  free                  Unknown  Unknown
+libmkl_core.so     00007F147885C84A  mkl_serv_free         Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F5E7CEBD370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F5E7D74D774  MPIDI_CH3I_SMP_wr     Unknown  Unknown
+libmpi.so.12.1.0   00007F5E7D747AEA  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F5E7D6C1B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F5E7D6C198C  MPIC_Sendrecv         Unknown  Unknown
+libmkl_core.so     00007F4DE09E384A  mkl_serv_free         Unknown  Unknown
+libmkl_core.so     00007F4DE09E2B17  mkl_serv_dealloca     Unknown  Unknown
+libmkl_avx2.so     00007F4DD25EB74D  mkl_blas_avx2_dge     Unknown  Unknown
+libmkl_avx2.so     00007F4DD25ED52F  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007F4DD25FCF28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007F4DE2606062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_intel_thre  00007F4DE263CF34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007F4DE3F9E8A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005E2A6C  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+libmkl_core.so     00007F147885BB17  mkl_serv_dealloca     Unknown  Unknown
+libmkl_avx2.so     00007F146A46474D  mkl_blas_avx2_dge     Unknown  Unknown
+libmkl_avx2.so     00007F146A46652F  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007F146A475F28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007F147A47F062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_intel_thre  00007F147A4B5F34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007F147BE178A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005DB734  Unknown               Unknown  Unknown
+vasp_std           00000000005DD387  Unknown               Unknown  Unknown
+vasp_std           0000000000606371  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F5E7D60B69F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F5E7D60B327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007F5E7D5A9FD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F5E7D5A98E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007F5E7DE35D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F4DDEDD2B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F1476C4BB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F5E7CB0EB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F79F3110370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F79F39A284D  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F79F399AAD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F79F3914B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F79F39145A2  MPIC_Recv             Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FACFCE28370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007FACFD702CDF  _int_malloc           Unknown  Unknown
+libmpi.so.12.1.0   00007FACFD70301B  malloc                Unknown  Unknown
+libmkl_core.so     00007FACFE68898E  mkl_serv_malloc       Unknown  Unknown
+libmkl_core.so     00007FACFE687D1D  mkl_serv_allocate     Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F5FD2C4A370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F5FD34DC3B3  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F5FD34D4AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F5FD344EB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F5FD344E98C  MPIC_Sendrecv         Unknown  Unknown
+libmkl_avx2.so     00007FACF02923A6  mkl_blas_avx2_dge     Unknown  Unknown
+libmkl_avx2.so     00007FACF02937D9  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007FACF02A3F28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007FAD002AD062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_intel_thre  00007FAD002E3F34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007FAD01C458A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005DB734  Unknown               Unknown  Unknown
+vasp_std           00000000005DD387  Unknown               Unknown  Unknown
+vasp_std           0000000000606371  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F5FD339869F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F5FD3398327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007F5FD3336FD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F5FD33368E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007F5FD3BC2D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+libc-2.17.so       00007FACFCA79B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F5FD289BB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FA04BC02370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007FA04C4CBA18  avlfindex             Unknown  Unknown
+libmpi.so.12.1.0   00007FA04C4B20EE  find_and_free_dre     Unknown  Unknown
+libmpi.so.12.1.0   00007FA04C4DA5CC  mvapich2_munmap       Unknown  Unknown
+libmpi.so.12.1.0   00007FA04C4DD80F  free                  Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F80E65B1370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F80E6E43DE4  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F80E6E3BAD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F80E6DB5B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F80E6DB598C  MPIC_Sendrecv         Unknown  Unknown
+libmkl_core.so     00007FA04D46484A  mkl_serv_free         Unknown  Unknown
+libmkl_core.so     00007FA04D463B17  mkl_serv_dealloca     Unknown  Unknown
+libmkl_avx2.so     00007FA03F06C74D  mkl_blas_avx2_dge     Unknown  Unknown
+libmkl_avx2.so     00007FA03F06E52F  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007FA03F07DF28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007FA04F087062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_intel_thre  00007FA04F0BDF34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007FA050A1F8A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005DB734  Unknown               Unknown  Unknown
+vasp_std           00000000005DD387  Unknown               Unknown  Unknown
+vasp_std           0000000000606371  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F80E6CFF69F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F80E6CFF327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007F80E6C9DFD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F80E6C9D8E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007F80E7529D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007FA04B853B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F80E6202B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F9A3CDF5370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F9A3D6BEA57  avlfindex             Unknown  Unknown
+libmpi.so.12.1.0   00007F9A3D6A50EE  find_and_free_dre     Unknown  Unknown
+libmpi.so.12.1.0   00007F9A3D6CD5CC  mvapich2_munmap       Unknown  Unknown
+libmpi.so.12.1.0   00007F9A3D6D080F  free                  Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FDE9E36D370  Unknown               Unknown  Unknown
+vasp_std           00000000014560DE  __intel_avx_rep_m     Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EC29749  MPIDI_CH3I_MRAILI     Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EBFA065  MPIDI_CH3I_read_p     Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EBF7B43  MPIDI_CH3I_Progre     Unknown  Unknown
+libmkl_core.so     00007F9A3E65784A  mkl_serv_free         Unknown  Unknown
+libmkl_core.so     00007F9A3E656B17  mkl_serv_dealloca     Unknown  Unknown
+libmkl_avx2.so     00007F9A3025F74D  mkl_blas_avx2_dge     Unknown  Unknown
+libmkl_avx2.so     00007F9A3026152F  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007F9A30270F28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007F9A4027A062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_intel_thre  00007F9A402B0F34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007F9A41C128A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005DB734  Unknown               Unknown  Unknown
+vasp_std           00000000005DD387  Unknown               Unknown  Unknown
+vasp_std           0000000000606371  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EB71B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EB7198C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EABB69F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EABB327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EA59FD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007FDE9EA598E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007FDE9F2E5D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F9A3CA46B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007FDE9DFBEB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F6FF5C4D370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F6FF64FA99A  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F6FF6516A57  avlfindex             Unknown  Unknown
+libmpi.so.12.1.0   00007F6FF64FD0EE  find_and_free_dre     Unknown  Unknown
+libmpi.so.12.1.0   00007F6FF65255CC  mvapich2_munmap       Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F2C7CB88370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F2C7D41A83B  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F2C7D412AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F2C7D38CB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F2C7D38C98C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F6FF652880F  free                  Unknown  Unknown
+libmkl_core.so     00007F6FF74AF84A  mkl_serv_free         Unknown  Unknown
+libmkl_core.so     00007F6FF74AEB17  mkl_serv_dealloca     Unknown  Unknown
+libmkl_avx2.so     00007F6FE90B774D  mkl_blas_avx2_dge     Unknown  Unknown
+libmkl_avx2.so     00007F6FE90B952F  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007F6FE90C8F28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007F6FF90D2062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_intel_thre  00007F6FF9108F34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007F6FFAA6A8A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005DB734  Unknown               Unknown  Unknown
+vasp_std           00000000005DD387  Unknown               Unknown  Unknown
+vasp_std           0000000000606371  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F2C7D2D669F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F2C7D2D6327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007F2C7D274FD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F2C7D2748E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007F2C7DB00D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F6FF589EB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F2C7C7D9B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FBEEEB9F370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007FBEEF4313C3  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007FBEEF429AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007FBEEF3A3B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007FBEEF3A398C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007FBEEF2ED69F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007FBEEF2ED327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007FBEEF28BFD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007FBEEF28B8E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007FBEEFB17D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007FBEEE7F0B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F3697D7C370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F3698636D87  MPIDI_CH3I_MRAILI     Unknown  Unknown
+libmpi.so.12.1.0   00007F369860903F  MPIDI_CH3I_read_p     Unknown  Unknown
+libmpi.so.12.1.0   00007F3698606B43  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F3698580B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F369858098C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F36984CA69F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F36984CA327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007F3698468FD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F36984688E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007F3698CF4D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F36979CDB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F429FC40370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F42A04D23CB  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F42A04CAAD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F42A0444B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F42A044498C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F42A038E69F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F42A038E327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007F42A032CFD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F42A032C8E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007F42A0BB8D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F429F891B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F36501AF370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F3650A43004  MPIDI_CH3I_SMP_pu     Unknown  Unknown
+libmpi.so.12.1.0   00007F3650A41DE9  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F3650A39AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F36509B3B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F36509B398C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F36508FD69F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F36508FD327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007F365089BFD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F365089B8E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007F3651127D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F364FE00B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FEB53638370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007FEB53ECB2DB  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007FEB53EC2AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007FEB53E3CB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007FEB53E3C98C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007FEB53D8669F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007FEB53D86327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007FEB53D24FD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007FEB53D248E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007FEB545B0D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007FEB53289B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FEF4742B370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47CBEFFE  MPIDI_CH3I_SMP_pu     Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47CBDDE9  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47CB5AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47C2FB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47C2F98C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47B7969F  MPIR_Alltoallv_in     Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47B79327  MPIR_Alltoallv_MV     Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47B17FD9  MPIR_Alltoallv_im     Unknown  Unknown
+libmpi.so.12.1.0   00007FEF47B178E6  MPI_Alltoallv         Unknown  Unknown
+libmpifort.so.12.  00007FEF483A3D1A  pmpi_alltoallv_       Unknown  Unknown
+vasp_std           00000000004146BE  Unknown               Unknown  Unknown
+vasp_std           000000000119054A  Unknown               Unknown  Unknown
+vasp_std           0000000001187131  Unknown               Unknown  Unknown
+vasp_std           0000000001187D0D  Unknown               Unknown  Unknown
+vasp_std           000000000118874F  Unknown               Unknown  Unknown
+vasp_std           000000000060688E  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007FEF4707CB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F14AAF81370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F14AB84AA50  avlfindex             Unknown  Unknown
+libmpi.so.12.1.0   00007F14AB8310EE  find_and_free_dre     Unknown  Unknown
+libmpi.so.12.1.0   00007F14AB8595CC  mvapich2_munmap       Unknown  Unknown
+libmpi.so.12.1.0   00007F14AB85C80F  free                  Unknown  Unknown
+libmkl_core.so     00007F14AC7E384A  mkl_serv_free         Unknown  Unknown
+libmkl_core.so     00007F14AC7E2B17  mkl_serv_dealloca     Unknown  Unknown
+libmkl_avx2.so     00007F149E3EB74D  mkl_blas_avx2_dge     Unknown  Unknown
+libmkl_avx2.so     00007F149E3ED52F  mkl_blas_avx2_d_g     Unknown  Unknown
+libmkl_avx2.so     00007F149E3FCF28  mkl_blas_avx2_xdg     Unknown  Unknown
+libmkl_intel_thre  00007F14AE406062  mkl_blas_dgemm_ho     Unknown  Unknown
+libmkl_intel_thre  00007F14AE43CF34  mkl_blas_dgemm        Unknown  Unknown
+libmkl_intel_lp64  00007F14AFD9E8A3  DGEMM                 Unknown  Unknown
+vasp_std           00000000005DB734  Unknown               Unknown  Unknown
+vasp_std           00000000005DD387  Unknown               Unknown  Unknown
+vasp_std           0000000000606371  Unknown               Unknown  Unknown
+vasp_std           0000000000C63398  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F14AABD2B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F79F3856446  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F79F3859719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F79F37F4495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F79F37F3E59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F79F4088EE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F79F2D61B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F775070F370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F7750FCB859  MPIDI_CH3I_MRAILI     Unknown  Unknown
+libmpi.so.12.1.0   00007F7750F9C065  MPIDI_CH3I_read_p     Unknown  Unknown
+libmpi.so.12.1.0   00007F7750F99B43  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F7750F13B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F7750F1343C  MPIC_Send             Unknown  Unknown
+libmpi.so.12.1.0   00007F7750E54543  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F7750E58719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F7750DF3495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F7750DF2E59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F7751687EE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F7750360B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F35CCE16370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD6A9F3A  MPIDI_CH3I_SMP_pu     Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD6A8DE9  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD6A0AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD61AB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD61A5A2  MPIC_Recv             Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD55B58A  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD55F719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD4FA495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F35CD4F9E59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F35CDD8EEE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F35CCA67B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FF699527370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007FF699DB7606  MPIDI_CH3I_SMP_wr     Unknown  Unknown
+libmpi.so.12.1.0   00007FF699DB1AEA  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007FF699D2BB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007FF699D2B5A2  MPIC_Recv             Unknown  Unknown
+libmpi.so.12.1.0   00007FF699C6D446  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007FF699C70719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007FF699C0B495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007FF699C0AE59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007FF69A49FEE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007FF699178B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F8AE03D7370  Unknown               Unknown  Unknown
+vasp_std           00000000014560A6  __intel_avx_rep_m     Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0C93749  MPIDI_CH3I_MRAILI     Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0C64065  MPIDI_CH3I_read_p     Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0C61B43  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0BDBB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0BDB43C  MPIC_Send             Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0B1C543  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0B20719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0ABB495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F8AE0ABAE59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F8AE134FEE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F8AE0028B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F09A040A370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0CC4E4C  MPIDI_CH3I_MRAILI     Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0C9703F  MPIDI_CH3I_read_p     Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0C94B43  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0C0EB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0C0E972  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0B4FEA1  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0B53719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0AEE495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F09A0AEDE59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F09A1382EE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F09A005BB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F7361083370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F73619162DB  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F736190DAD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F7361887B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F736188798C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F73617C8EA1  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F73617CC719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F7361767495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F7361766E59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F7361FFBEE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F7360CD4B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F082D409370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F082DC9CF3A  MPIDI_CH3I_SMP_pu     Unknown  Unknown
+libmpi.so.12.1.0   00007F082DC9BDE9  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F082DC93AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F082DC0DB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F082DC0D98C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F082DB4EEA1  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F082DB52719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F082DAED495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F082DAECE59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F082E381EE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F082D05AB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F4FA1127370  Unknown               Unknown  Unknown
+libmlx4-rdmav2.so  00007F4F9D04663F  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA19E3767  MPIDI_CH3I_MRAILI     Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA19B4065  MPIDI_CH3I_read_p     Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA19B1B43  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA192BB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA192B98C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA186CEA1  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA1870719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA180B495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F4FA180AE59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F4FA209FEE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F4FA0D78B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F4078120370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F40789B23C3  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F40789AAAD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F4078924B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F407892498C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F4078865EA1  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F4078869719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F4078804495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F4078803E59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F4079098EE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F4077D71B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007FB18EF14370  Unknown               Unknown  Unknown
+libmlx4-rdmav2.so  00007FB18AE32B6D  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F7D0767  MPIDI_CH3I_MRAILI     Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F7A1065  MPIDI_CH3I_read_p     Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F79EB43  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F718B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F71898C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F659EA1  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F65D719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F5F8495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007FB18F5F7E59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007FB18FE8CEE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007FB18EB65B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F50FF568370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F50FFDFADD4  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F50FFDF2AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F50FFD6CB9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F50FFD6C98C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F50FFCADEA1  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F50FFCB1719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F50FFC4C495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F50FFC4BE59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F51004E0EE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F50FF1B9B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F560D341370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F560DBD4F3A  MPIDI_CH3I_SMP_pu     Unknown  Unknown
+libmpi.so.12.1.0   00007F560DBD3DE9  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F560DBCBAD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F560DB45B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F560DB4598C  MPIC_Sendrecv         Unknown  Unknown
+libmpi.so.12.1.0   00007F560DA86EA1  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F560DA8A719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F560DA25495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F560DA24E59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F560E2B9EE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F560CF92B35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
+forrtl: error (78): process killed (SIGTERM)
+Image              PC                Routine            Line        Source             
+vasp_std           00000000014489A1  tbk_trace_stack_i     Unknown  Unknown
+vasp_std           0000000001446ADB  tbk_string_stack_     Unknown  Unknown
+vasp_std           00000000013C60F4  Unknown               Unknown  Unknown
+vasp_std           00000000013C5F06  tbk_stack_trace       Unknown  Unknown
+vasp_std           0000000001362F27  for__issue_diagno     Unknown  Unknown
+vasp_std           0000000001369A96  for__signal_handl     Unknown  Unknown
+libpthread-2.17.s  00007F84F583C370  Unknown               Unknown  Unknown
+libmpi.so.12.1.0   00007F84F60CE3C3  MPIDI_CH3I_SMP_re     Unknown  Unknown
+libmpi.so.12.1.0   00007F84F60C6AD9  MPIDI_CH3I_Progre     Unknown  Unknown
+libmpi.so.12.1.0   00007F84F6040B9A  MPIC_Wait             Unknown  Unknown
+libmpi.so.12.1.0   00007F84F60405A2  MPIC_Recv             Unknown  Unknown
+libmpi.so.12.1.0   00007F84F5F8158A  MPIR_Allreduce_pt     Unknown  Unknown
+libmpi.so.12.1.0   00007F84F5F85719  MPIR_Allreduce_in     Unknown  Unknown
+libmpi.so.12.1.0   00007F84F5F20495  MPIR_Allreduce_im     Unknown  Unknown
+libmpi.so.12.1.0   00007F84F5F1FE59  PMPI_Allreduce        Unknown  Unknown
+libmpifort.so.12.  00007F84F67B4EE0  mpi_allreduce_        Unknown  Unknown
+vasp_std           000000000041748F  Unknown               Unknown  Unknown
+vasp_std           000000000054D98D  Unknown               Unknown  Unknown
+vasp_std           00000000005E2D07  Unknown               Unknown  Unknown
+vasp_std           00000000005EFA41  Unknown               Unknown  Unknown
+vasp_std           0000000000C64528  Unknown               Unknown  Unknown
+vasp_std           0000000000C8D107  Unknown               Unknown  Unknown
+vasp_std           00000000011D82C8  Unknown               Unknown  Unknown
+vasp_std           0000000000410E5E  Unknown               Unknown  Unknown
+libc-2.17.so       00007F84F548DB35  __libc_start_main     Unknown  Unknown
+vasp_std           0000000000410D69  Unknown               Unknown  Unknown
