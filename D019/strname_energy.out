@@ -1,7 +1,7 @@
-sqs_lev=0_a_Ir=1,b_Ir=1
+../HCP_A3/sqs_lev=0_c_Ir=1
 sqs_lev=0_a_Ir=1,b_Ru=1
 sqs_lev=0_a_Ru=1,b_Ir=1
-sqs_lev=0_a_Ru=1,b_Ru=1
+../HCP_A3/sqs_lev=0_c_Ru=1
 sqs_lev=1_a_Ir=0.5,a_Ru=0.5,b_Ir=1
 sqs_lev=1_a_Ir=0.5,a_Ru=0.5,b_Ru=1
 sqs_lev=1_a_Ir=1,b_Ir=0.5,b_Ru=0.5

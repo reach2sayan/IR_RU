@@ -1,0 +1,11 @@
+## SLURM PROLOG ###############################################################
+##    Job ID : 13665372
+##  Job Name : D019_Ru1Ir1
+##  Nodelist : node[1133,1137,1149]
+##      CPUs : 64
+##  Mem/Node : 49152 MB
+## Directory : /gpfs/data/avandewa/ssamanta/IR_RU/D019/sqs_lev=0_a_Ru=1,b_Ir=1
+##   Started : Thu Jul  9 22:37:21 EDT 2020
+###############################################################################
+runstruct_vasp -w vasp.wrap srun --mpi=pmi2 -n 64
+slurmstepd: error: *** JOB 13665372 ON node1133 CANCELLED AT 2020-07-10T06:37:27 DUE TO TIME LIMIT ***
